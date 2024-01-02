@@ -1,0 +1,2 @@
+ How to use in comand line:  node .\gerarQRCode.js "https://wa.me/codigopostal-ddd-<number>"
+ try: node .\gerarQRCode.js "https://wa.me/5521900000000"
