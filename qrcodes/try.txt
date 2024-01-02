@@ -1,0 +1,1 @@
+ try: node .\gerarQRCode.js "https://wa.me/5521900000000"
