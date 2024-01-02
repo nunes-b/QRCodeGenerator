@@ -2,17 +2,26 @@ const QRCode = require("qrcode");
 const fs = require("fs").promises;
 const crypto = require("crypto");
 const opn = require("opn");
+// const chalk = require("chalk");
 
 async function gerarQRCode(dados, opcoes, caminhoDoArquivo) {
   try {
+    const chalk = (await import("chalk")).default;
+    const log = console.log;
     const hash = crypto.createHash("md5").update(dados).digest("hex");
     const caminhoArquivo = `${caminhoDoArquivo}/qrcode_${hash}.png`;
     const url = await QRCode.toDataURL(dados, opcoes);
     await fs.writeFile(caminhoArquivo, url.split(",")[1], "base64");
-    console.log(`QR Code gerado com sucesso: ${caminhoArquivo}`);
+    log(
+      chalk.blue(
+        "QR Code gerado com sucesso" +
+          chalk.red(": ") +
+          chalk.green(`${caminhoArquivo}`)
+      )
+    );
     await opn(caminhoArquivo);
   } catch (err) {
-    console.error("Erro ao gerar QR Code:", err);
+    log(chalk.red("Erro ao gerar QR Code:", err));
   }
 }
 
