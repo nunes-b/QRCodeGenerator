@@ -4,7 +4,7 @@ O gerador de QRCODE é uma função em Node.js simples que utiliza a biblioteca 
 
 ## Função Principal
 
-### \`gerarQRCode(dados, opcoes, caminhoDoArquivo)\`
+### gerarQRCode(dados, opcoes, caminhoDoArquivo)
 
 Esta função gera um código QR com base nos parâmetros fornecidos:
 
@@ -31,5 +31,11 @@ Visualize a imagem do código QR gerado no diretório de saída especificado.
 ```bash
 node gerarQRCode.js www.exemplo.com
 ```
+
+<p align="center">
+  <img width="400" height="400" src="https://github.com/romulotgh21/QRCodeGenerator/assets/85138285/a7a6712c-d488-4006-bb8b-4751bc92eafa" alt="Exemplo de QRCODE gerado pela função">
+  <br>
+  <strong>Exemplo:</strong> Escaneie a foto acima com o seu smartphone ou leitor de QRCode.
+</p>
 
 
